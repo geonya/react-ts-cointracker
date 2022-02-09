@@ -1,5 +1,6 @@
 {
 	"name": "react-ts-cointracker",
+	"homepage": "https://geonya.github.io/react-ts-cointracker",
 	"version": "0.1.0",
 	"private": true,
 	"dependencies": {

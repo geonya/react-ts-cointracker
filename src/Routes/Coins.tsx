@@ -2,6 +2,7 @@ import { useQuery } from "react-query";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { fetchCoins } from "../api";
+import { Helmet } from "react-helmet";
 
 const Container = styled.div`
 	max-width: 500px;
@@ -63,6 +64,9 @@ function Coins() {
 	const { isLoading, data } = useQuery<ICoin[]>("allcoins", fetchCoins);
 	return (
 		<Container>
+			<Helmet>
+				<title>Coin</title>
+			</Helmet>
 			<Header>
 				<Title>Coin Tracker</Title>
 			</Header>

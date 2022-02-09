@@ -65,6 +65,12 @@ a {
 * {
 	box-sizing:border-box;
 }
+.select_box {
+  margin:5px auto;
+  color:black;
+  width:300px;
+  text-align:center;
+}
 
 `;
 

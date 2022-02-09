@@ -27,6 +27,14 @@ const Header = styled.header`
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	position: relative;
+	a:first-child {
+		padding: 15px;
+		font-size: 30px;
+		position: absolute;
+		left: 0;
+		top: 0vh;
+	}
 `;
 const Title = styled.h1`
 	color: ${(props) => props.theme.accentColor};
@@ -136,6 +144,7 @@ function Coin() {
 	return (
 		<Container>
 			<Header>
+				<Link to={"/"}>&larr;</Link>
 				<Title>
 					{state?.name
 						? state.name
@@ -159,22 +168,20 @@ function Coin() {
 						</OverviewItem>
 						<OverviewItem>
 							<span>Price:</span>
-							<span>{priceData?.quotes.USD.price}</span>
+							<span>
+								$ {priceData?.quotes.USD.price.toFixed(2)}
+							</span>
 						</OverviewItem>
 					</Overview>
-					<Description>sdkfjlksdfjlkfjslksjf</Description>
+					<Description>{infoData?.description}</Description>
 					<Overview>
 						<OverviewItem>
-							<span>Rank:</span>
-							<span>234234</span>
-						</OverviewItem>
-						<OverviewItem>
 							<span>Total Supply:</span>
-							<span>234234</span>
+							<span>{priceData?.total_supply}</span>
 						</OverviewItem>
 						<OverviewItem>
 							<span>Max Supply:</span>
-							<span>234234</span>
+							<span>{priceData?.max_supply}</span>
 						</OverviewItem>
 					</Overview>
 					<Tabs>
@@ -186,8 +193,14 @@ function Coin() {
 						</Tab>
 					</Tabs>
 					<Routes>
-						<Route path="price" element={<Price />}></Route>
-						<Route path="chart" element={<Chart />}></Route>
+						<Route
+							path="price"
+							element={<Price coinId={coinId!} />}
+						></Route>
+						<Route
+							path="chart"
+							element={<Chart coinId={coinId!} />}
+						></Route>
 					</Routes>
 				</>
 			)}

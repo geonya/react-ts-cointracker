@@ -45,7 +45,8 @@ const Overview = styled.div`
 
 const OverviewItem = styled.div`
 	width: 90%;
-	background-color: rgba(0, 0, 0, 0.5);
+	background-color: ${(props) => props.theme.cardBgColor};
+	border: 1px solid white;
 	height: 60px;
 	border-radius: 999px;
 	display: flex;

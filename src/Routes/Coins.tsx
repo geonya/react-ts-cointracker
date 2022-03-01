@@ -5,6 +5,7 @@ import { fetchCoins } from "../api";
 import { Helmet } from "react-helmet";
 import { useSetRecoilState } from "recoil";
 import { isDarkAtom } from "../atom";
+import Switch from "@mui/material/Switch";
 
 const Container = styled.div`
 	max-width: 500px;
@@ -20,7 +21,10 @@ const Title = styled.h1`
 	font-size: 45px;
 	color: ${(props) => props.theme.accentColor};
 `;
-
+const SwitchTheme = styled(Switch)`
+	margin-top: 10px;
+	margin-left: 20px;
+`;
 const Loader = styled.span`
 	display: block;
 	text-align: center;
@@ -53,6 +57,7 @@ const Img = styled.img`
 	height: 35px;
 	margin-right: 10px;
 `;
+
 interface ICoin {
 	id: string;
 	name: string;
@@ -74,7 +79,7 @@ function Coins() {
 			</Helmet>
 			<Header>
 				<Title>Coin Tracker</Title>
-				<button onClick={toggleDarkAtom}>Toggle Mode</button>
+				<SwitchTheme onClick={toggleDarkAtom} />
 			</Header>
 			{isLoading ? (
 				<Loader>Loading...</Loader>

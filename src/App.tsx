@@ -2,7 +2,6 @@ import { createGlobalStyle } from "styled-components";
 import Router from "./Router";
 import { ThemeProvider } from "styled-components";
 import { darkTheme, lightTheme } from "./theme";
-import { useState } from "react";
 import { useRecoilValue } from "recoil";
 import { isDarkAtom } from "./atom";
 const GlobalStyle = createGlobalStyle`

@@ -2,9 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Coins from "./Routes/Coins";
 import Coin from "./Routes/Coin";
 
-interface IRouterProps {}
-
-function Router({}: IRouterProps) {
+function Router() {
 	return (
 		<BrowserRouter basename={process.env.PUBLIC_URL}>
 			<Routes>
